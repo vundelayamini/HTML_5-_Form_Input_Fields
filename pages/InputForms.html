@@ -63,7 +63,7 @@
               textError.textContent="";
               else
               textError.textContent="Name is incorrect";
-         });
+         })
          //UC2-Valid email
           const text=document.querySelector('#email');
          const textError=document.querySelector('.email-error');
@@ -73,6 +73,16 @@
               emailError.textContent="";
               else
               emailError.textContent="Invalid Email";
+         })
+         //UC3-Predefined mobile format.
+         const tel=document.querySelector('#tel');
+         const telError=document.querySelector('.tel-error');
+         tel.addEventListener('input', function(){
+             let telRegex= new RegExp(/^[0-9]{5}[0-9]{6}$/);
+             if(telRegex.test(tel.value))
+              telError.textContent="";
+              else
+              telError.textContent="TelePhone Number is incorrect";
          })
 
     </script>
