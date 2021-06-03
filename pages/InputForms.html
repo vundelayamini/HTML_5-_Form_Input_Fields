@@ -84,6 +84,16 @@
               else
               telError.textContent="TelePhone Number is incorrect";
          })
+         //UC4- predefined password minimum 8 characters.
+         const pwd=document.querySelector('#pwd');
+         const passwordError=document.querySelector('.password-error');
+         pwd.addEventListener('input', function(){
+             let passwordRegex= new RegExp(/^(?=.*[A-Z])(?=.*[0-9])(?=.*?[@#$%^&*?]){8,}$/);
+             if(passwordRegex.test(pwd.value))
+              passwordError.textContent="";
+              else
+              passwordError.textContent="Password is incorrect";
+         })
 
     </script>
 </body>
